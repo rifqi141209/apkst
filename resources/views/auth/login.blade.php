@@ -1,0 +1,7 @@
+@extends('layouts.auth')
+@section('title', 'Masuk - Kastore')
+@section('content')
+<div class="mt-8"><h1 class="font-display text-2xl font-bold">Selamat datang kembali</h1><p class="mt-2 text-sm text-slate-500">Masuk untuk membeli produk atau mengelola katalog.</p></div>
+@if($errors->any())<div class="mt-5 rounded-xl bg-rose-50 px-4 py-3 text-sm text-rose-700">{{ $errors->first() }}</div>@endif
+<form method="POST" action="{{ route('login') }}" class="mt-6 space-y-4">@csrf<div><label for="email" class="text-sm font-semibold">Email</label><input id="email" name="email" type="email" value="{{ old('email') }}" required autofocus class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-electric focus:ring-4 focus:ring-blue-100"></div><div><label for="password" class="text-sm font-semibold">Password</label><input id="password" name="password" type="password" required class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-electric focus:ring-4 focus:ring-blue-100"></div><label class="flex items-center gap-2 text-sm text-slate-500"><input type="checkbox" name="remember" class="rounded border-slate-300 text-electric"> Ingat saya</label><button class="w-full rounded-xl bg-electric py-3 text-sm font-bold text-white hover:bg-blue-700" type="submit">Masuk</button></form><p class="mt-6 text-center text-sm text-slate-500">Belum punya akun? <a class="font-bold text-electric" href="{{ route('register') }}">Daftar sekarang</a></p>
+@endsection
