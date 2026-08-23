@@ -46,9 +46,9 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'url' => env('MYSQL_URL') ?: env('DB_URL') ?: env('DATABASE_URL'),
-            'host' => env('MYSQLHOST') ?: env('DB_HOST', '127.0.0.1'),
-            'port' => env('MYSQLPORT') ?: env('DB_PORT', '3306'),
+            'url' => env('MYSQL_PUBLIC_URL') ?: env('MYSQL_URL') ?: env('DB_URL') ?: env('DATABASE_URL'),
+            'host' => env('MYSQL_PUBLIC_HOST') ?: env('MYSQLHOST') ?: env('DB_HOST', '127.0.0.1'),
+            'port' => env('MYSQL_PUBLIC_PORT') ?: env('MYSQLPORT') ?: env('DB_PORT', '3306'),
             'database' => env('MYSQLDATABASE') ?: env('DB_DATABASE', 'laravel'),
             'username' => env('MYSQLUSER') ?: env('DB_USERNAME', 'root'),
             'password' => env('MYSQLPASSWORD') ?: env('DB_PASSWORD', ''),
